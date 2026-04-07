@@ -4,7 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Sidebar() {
+interface SidebarProps {
+  onSearchClick?: () => void;
+  isSearchActive?: boolean;
+}
+
+export default function Sidebar({ onSearchClick, isSearchActive }: SidebarProps) {
   const pathname = usePathname();
 
   return (
@@ -51,10 +56,10 @@ export default function Sidebar() {
           </svg>
         </Link>
 
-        <Link
-          href="/search"
+        <button
+          onClick={onSearchClick}
           className={`group flex h-18 w-full items-center justify-center transition-all ${
-            pathname === "/search"
+            isSearchActive
               ? "bg-orange-500/10 text-orange-500"
               : "text-zinc-500 hover:bg-zinc-800 hover:text-zinc-300"
           }`}
@@ -73,7 +78,7 @@ export default function Sidebar() {
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
             />
           </svg>
-        </Link>
+        </button>
 
         <Link
           href="/about"

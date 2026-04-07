@@ -1,12 +1,25 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import data from "@/data/aws-services.json";
 import Sidebar from "./components/Sidebar";
+import SearchOverlay from "./components/SearchOverlay";
 
 export default function Home() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   return (
     <div className="flex h-screen overflow-hidden">
-      <Sidebar />
+      <Sidebar
+        onSearchClick={() => setIsSearchOpen(true)}
+        isSearchActive={isSearchOpen}
+      />
+      <SearchOverlay
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+      />
 
       <main className="ml-24 flex-1">
         <div className="grid h-screen grid-cols-6 grid-rows-4">
@@ -14,7 +27,7 @@ export default function Home() {
             <Link
               key={category.id}
               href={`/category/${category.id}`}
-              className="group flex flex-col items-center justify-center gap-3 bg-zinc-100 transition-all hover:brightness-95 dark:bg-zinc-800"
+              className="group flex flex-col items-center justify-center gap-3 bg-zinc-900 transition-all hover:brightness-110"
             >
               <Image
                 src={category.icon}
@@ -23,7 +36,7 @@ export default function Home() {
                 height={95}
                 className="transition-transform group-hover:scale-110"
               />
-              <span className="px-2 text-center text-sm font-medium text-zinc-700 dark:text-zinc-200">
+              <span className="px-2 text-center text-sm font-medium text-zinc-200">
                 {category.name}
               </span>
             </Link>
