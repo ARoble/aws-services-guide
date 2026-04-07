@@ -50,7 +50,7 @@ export default function Home() {
             <span className="text-xs text-zinc-500">by Abdulladif Roble</span>
             <div className="flex items-center gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/ARoble/aws-services-guide"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zinc-500 transition-colors hover:text-white"

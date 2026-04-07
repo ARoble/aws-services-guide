@@ -37,7 +37,7 @@ export default function AboutPage() {
                 Check out the GitHub repo and make a pull request. All contributions are welcome!
               </p>
               <a
-                href="https://github.com"
+                href="https://github.com/ARoble/aws-services-guide"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 transition-all hover:bg-zinc-200"

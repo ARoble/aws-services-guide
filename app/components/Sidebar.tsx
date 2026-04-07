@@ -109,7 +109,7 @@ export default function Sidebar({ onSearchClick, isSearchActive }: SidebarProps)
 
         <div className="flex flex-col items-center gap-1">
           <a
-            href="https://github.com"
+            href="https://github.com/ARoble/aws-services-guide"
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-11 w-11 items-center justify-center rounded-xl text-zinc-500 transition-all hover:bg-zinc-800 hover:text-zinc-300"
