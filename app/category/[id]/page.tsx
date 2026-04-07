@@ -26,7 +26,7 @@ export default async function CategoryPage({
     <div className="flex min-h-screen">
       <Sidebar />
 
-      <main className="ml-24 flex-1 bg-zinc-50 dark:bg-zinc-950">
+      <main className="flex-1 pb-16 md:ml-24 md:pb-0 bg-zinc-50 dark:bg-zinc-950">
         <div className="mx-auto max-w-6xl px-6 py-10">
           <Link
             href="/"
