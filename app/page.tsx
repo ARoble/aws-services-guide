@@ -8,13 +8,13 @@ export default function Home() {
     <div className="flex h-screen overflow-hidden">
       <Sidebar />
 
-      <main className="ml-20 flex-1">
+      <main className="ml-24 flex-1">
         <div className="grid h-screen grid-cols-6 grid-rows-4">
           {data.categories.map((category) => (
             <Link
               key={category.id}
               href={`/category/${category.id}`}
-              className="group relative flex flex-col items-center justify-center gap-2 bg-zinc-100 transition-all hover:brightness-95 dark:bg-zinc-800"
+              className="group flex flex-col items-center justify-center gap-3 bg-zinc-100 transition-all hover:brightness-95 dark:bg-zinc-800"
             >
               <Image
                 src={category.icon}
@@ -23,7 +23,7 @@ export default function Home() {
                 height={95}
                 className="transition-transform group-hover:scale-110"
               />
-              <span className="absolute bottom-2 left-2 right-2 text-center text-[11px] font-medium text-zinc-600 dark:text-zinc-300">
+              <span className="px-2 text-center text-sm font-medium text-zinc-700 dark:text-zinc-200">
                 {category.name}
               </span>
             </Link>

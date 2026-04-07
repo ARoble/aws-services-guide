@@ -8,13 +8,13 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed left-0 top-0 z-20 flex h-screen w-24 flex-col items-center border-r border-zinc-800 bg-zinc-950 py-5">
-      <Link href="/" className="mb-6">
+    <aside className="fixed left-0 top-0 z-20 flex h-screen w-24 flex-col items-center border-r border-zinc-800 bg-zinc-950 ">
+      <Link href="/" className="">
         <Image
           src="/icons/AWS-Cloud-logo_32.svg"
           alt="AWS"
-          width={40}
-          height={40}
+          width={100}
+          height={100}
           className="hidden dark:block"
         />
         <Image
@@ -26,10 +26,10 @@ export default function Sidebar() {
         />
       </Link>
 
-      <nav className="flex flex-1 flex-col items-center gap-1">
+      <nav className="flex flex-1 flex-col items-center gap-1 w-full">
         <Link
           href="/"
-          className={`group flex h-11 w-11 items-center justify-center rounded-xl transition-all ${
+          className={`group flex h-18 w-full items-center justify-center transition-all ${
             pathname === "/"
               ? "bg-orange-500/10 text-orange-500"
               : "text-zinc-500 hover:bg-zinc-800 hover:text-zinc-300"
@@ -53,7 +53,7 @@ export default function Sidebar() {
 
         <Link
           href="/search"
-          className={`group flex h-11 w-11 items-center justify-center rounded-xl transition-all ${
+          className={`group flex h-18 w-full items-center justify-center transition-all ${
             pathname === "/search"
               ? "bg-orange-500/10 text-orange-500"
               : "text-zinc-500 hover:bg-zinc-800 hover:text-zinc-300"
@@ -71,6 +71,30 @@ export default function Sidebar() {
               strokeLinecap="round"
               strokeLinejoin="round"
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+        </Link>
+
+        <Link
+          href="/about"
+          className={`group flex h-18 w-full items-center justify-center transition-all ${
+            pathname === "/about"
+              ? "bg-orange-500/10 text-orange-500"
+              : "text-zinc-500 hover:bg-zinc-800 hover:text-zinc-300"
+          }`}
+          title="About"
+        >
+          <svg
+            className="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={1.5}
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
             />
           </svg>
         </Link>
